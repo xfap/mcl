@@ -620,6 +620,8 @@ class Vint {
     std::cout << "parm xn = " << xn << "\n";
     z.buf_[zn - 1] = bint::mulUnitN(&z.buf_[0], &x.buf_[0], y, xn);
     z.isNeg_ = x.isNeg_;
+    std::cout << "function pointer is null: ? "
+              << (bint::get_mulUnit(xn) == nullptr) << "\n";
     std::cout << "go z.trim\n";
     z.trim(zn);
     std::cout << "go z.trim ok!\n";
