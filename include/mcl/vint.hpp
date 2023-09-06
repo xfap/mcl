@@ -619,9 +619,9 @@ class Vint {
       return;
     }
     std::cout << "parm xn = " << xn << "\n";
-    std::cout << "function pointer is null: ? ... \n";
-    std::cout << "go z.buf_[zn - 1]== bint::mulUnitN(...)\n";
+    std::cout << "function pointer is null: ? ... ";
     std::cout << (bint::get_mulUnit(xn) == nullptr) << "\n";
+    std::cout << "go z.buf_[zn - 1]== bint::mulUnitN(...)\n";
     z.buf_[zn - 1] = bint::mulUnitN(&z.buf_[0], &x.buf_[0], y, xn);
     z.isNeg_ = x.isNeg_;
     std::cout << "go z.trim\n";
