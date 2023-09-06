@@ -20,6 +20,8 @@
 #endif
 #include <string.h>
 
+#include <iostream>
+
 namespace mcl {
 
 namespace vint {
@@ -616,12 +618,12 @@ class Vint {
       z.clear();
       return;
     }
-    std::cout << "go z.buf_[zn - 1]== bint::mulUnitN(...)\n";
     std::cout << "parm xn = " << xn << "\n";
+    std::cout << "function pointer is null: ? ... \n";
+    std::cout << "go z.buf_[zn - 1]== bint::mulUnitN(...)\n";
+    std::cout << (bint::get_mulUnit(xn) == nullptr) << "\n";
     z.buf_[zn - 1] = bint::mulUnitN(&z.buf_[0], &x.buf_[0], y, xn);
     z.isNeg_ = x.isNeg_;
-    std::cout << "function pointer is null: ? "
-              << (bint::get_mulUnit(xn) == nullptr) << "\n";
     std::cout << "go z.trim\n";
     z.trim(zn);
     std::cout << "go z.trim ok!\n";
